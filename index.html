@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Custom Favicon -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+
+    <title>Todo List | Frontend Mentor</title>
+
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--normalize CSS -->
+    <link rel="stylesheet" href="./styles/normalize.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <!-- main -->
+    <main>
+      <!-- input container -->
+      <div class="form-container">
+        <div class="input-container" id="form">
+          <div class="title-logo">
+            <h1 class="title">TODO</h1>
+            <img src="./images/icon-sun.svg" alt="sun" class="sun" />
+          </div>
+          <div class="input-icon-container">
+            <i class="fa-solid fa-bars-staggered list-icon"></i>
+            <!-- input -->
+            <input
+              type="text"
+              placeholder="Create a new todo..."
+              id="todo-inputs"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- edit container -->
+      <div class="edit-container">
+        <div class="edit-options">
+          <p class="options active" id="all">All</p>
+          <p class="options" id="pending">Pending</p>
+          <p class="options" id="completed">Completed</p>
+        </div>
+        <p class="options-clr" id="btn-clear">Clear all</p>
+      </div>
+
+      <!-- output container -->
+      <div class="output-container">
+        <ul class="tasks" id="tasks">
+          <li class="task-items">
+            <div class="input-task">
+              <!-- check box icon -->
+              <label class="container">
+                <input type="checkbox" id="cbox1" />
+                <div class="checkmark"></div>
+                <p class="todo" id="todo">10 mins meditation</p>
+              </label>
+            </div>
+            <!-- edit & delete icons -->
+            <div class="setting">
+              <i class="fa-solid fa-ellipsis-vertical del-icon"></i>
+              <ul class="task-menu">
+                <li id="task-del"><i class="fa-solid fa-pen"></i>Edit</li>
+                <li id="task-edit"><i class="fa-solid fa-trash"></i>Delete</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <!-- Custom JavaScript -->
+    <script src="./script/script.js"></script>
+  </body>
+</html>
