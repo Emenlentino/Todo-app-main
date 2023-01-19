@@ -100,7 +100,6 @@ main {
   border: none;
   color: #9394a5;
   background-color: var(--clr-Very-Dark-Desaturated-Blue);
-  font-size: 0.9rem;
   cursor: pointer;
 }
 
@@ -110,7 +109,7 @@ main {
 
 .list-icon {
   position: absolute;
-  top: 0.75rem;
+  top: 0.68rem;
   left: 1rem;
   color: #9394a5;
 }
@@ -294,6 +293,15 @@ main {
   padding: 0.35rem 0.5rem;
   border-radius: 3px;
   cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.task-menu li:first-child {
+  padding-top: 0.38rem;
+}
+
+.task-menu li:last-child {
+  padding-top: 0.55rem;
 }
 
 .task-menu li:last-child {
@@ -378,7 +386,7 @@ main {
   }
 
   #todo-inputs {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     padding-left: 3.25rem;
   }
 
@@ -409,6 +417,22 @@ main {
     padding: 1rem 1.5rem 0;
     width: 500px;
     margin: 1rem auto;
+  }
+
+  .task-items {
+    font-size: 1.15rem;
+  }
+
+  .task-menu li {
+    font-size: 1rem;
+  }
+
+  .task-menu li:first-child {
+    padding-top: 0.3rem;
+  }
+
+  .task-menu li:last-child {
+    padding-top: 0.4rem;
   }
 
   .options {
