@@ -9,7 +9,7 @@ let todos = JSON.parse(localStorage.getItem("todo-list"));
 let editId;
 let isEditing = false;
 
-// filtering tasks
+// filtering tasks (all,pending,completed)
 filters.forEach((btn) => {
   btn.addEventListener("click", () => {
     const filter = document.querySelector(".options.active");
@@ -20,7 +20,9 @@ filters.forEach((btn) => {
 });
 
 // functions
+// display lists
 function showTodo(filter) {
+  // filter - it will all list elements
   // adding list elements
   let li = "";
   if (todos) {
@@ -53,7 +55,7 @@ function showTodo(filter) {
   // if any list was empty it will show this msg
   taskOutputEl.innerHTML = li || `<span>You don't have any task here...</span>`;
 }
-showTodo("all");
+showTodo("all"); //passing all list to display
 
 // for completed task - line through
 function updateStatus(selectedTask) {
@@ -122,11 +124,13 @@ taskInputEl.addEventListener("keyup", (e) => {
 
     taskInputEl.value = "";
 
+    // local storage
     localStorage.setItem("todo-list", JSON.stringify(todos));
     showTodo("all");
   }
 });
 
+// clear btn
 clearEl.addEventListener("click", () => {
   // removing all items of todos
   todos.splice(0, todos.length);
