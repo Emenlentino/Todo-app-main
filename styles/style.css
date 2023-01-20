@@ -71,7 +71,7 @@ main {
 .input-container {
   background-image: url(../images/bg-mobile-dark.jpg);
   background-size: cover;
-  padding: 2rem 1.25rem;
+  padding: 2rem 1rem;
 }
 
 .title-logo {
@@ -109,7 +109,7 @@ main {
 
 .list-icon {
   position: absolute;
-  top: 0.68rem;
+  top: 0.69rem;
   left: 1rem;
   color: #9394a5;
 }
