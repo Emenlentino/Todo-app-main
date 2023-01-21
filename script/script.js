@@ -79,7 +79,7 @@ function showMenu(selectedMenu) {
   taskMenu.classList.add("show");
   // removing show class from the task menu on the document click
   document.addEventListener("click", (e) => {
-    if (e.target.tagName != "I" || e.target != selectedMenu) {
+    if (e.target.tagName !== "I" || e.target !== selectedMenu) {
       taskMenu.classList.remove("show");
     }
   });
@@ -91,11 +91,13 @@ function deleteTask(deleteId) {
   todos.splice(deleteId, 1);
   localStorage.setItem("todo-list", JSON.stringify(todos));
 
-  filters.forEach((btn) => {
-    btn.classList.remove("active");
-    document.getElementById("all").classList.add("active");
+  // when we delete todo it will remain active page
+  filters.forEach((filter) => {
+    let active = filter.classList.contains("active");
+    if (active) {
+      showTodo(filter.id);
+    }
   });
-  showTodo("all");
 }
 
 // edit task
@@ -120,24 +122,31 @@ taskInputEl.addEventListener("keyup", (e) => {
         name: userTaskInput,
         status: "pending",
       };
+
+      // when we add new todo it will show ALL lists
+      // it remove active class from pending/completed
+      filters.forEach((btn) => {
+        btn.classList.remove("active");
+        document.getElementById("all").classList.add("active");
+      });
       //adding new task to todos
       todos.push(taskInfo);
+      showTodo("all");
     } else {
       isEditing = false;
       todos[editId].name = userTaskInput;
+
+      filters.forEach((filter) => {
+        let active = filter.classList.contains("active");
+        if (active) {
+          showTodo(filter.id);
+        }
+      });
     }
     taskInputEl.value = "";
 
-    // when we add new todo it will show ALL lists
-    // it remove active class from pending/completed
-    filters.forEach((btn) => {
-      btn.classList.remove("active");
-      document.getElementById("all").classList.add("active");
-    });
-
     // local storage
     localStorage.setItem("todo-list", JSON.stringify(todos));
-    showTodo("all");
   }
 });
 
@@ -146,5 +155,9 @@ clearEl.addEventListener("click", () => {
   // removing all items of todos
   todos.splice(0, todos.length);
   localStorage.setItem("todo-list", JSON.stringify(todos));
+  filters.forEach((btn) => {
+    btn.classList.remove("active");
+    document.getElementById("all").classList.add("active");
+  });
   showTodo("all");
 });
