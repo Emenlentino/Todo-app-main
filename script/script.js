@@ -90,6 +90,11 @@ function deleteTask(deleteId) {
   // removing selected task from array/todos
   todos.splice(deleteId, 1);
   localStorage.setItem("todo-list", JSON.stringify(todos));
+
+  filters.forEach((btn) => {
+    btn.classList.remove("active");
+    document.getElementById("all").classList.add("active");
+  });
   showTodo("all");
 }
 
@@ -121,8 +126,14 @@ taskInputEl.addEventListener("keyup", (e) => {
       isEditing = false;
       todos[editId].name = userTaskInput;
     }
-
     taskInputEl.value = "";
+
+    // when we add new todo it will show ALL lists
+    // it remove active class from pending/completed
+    filters.forEach((btn) => {
+      btn.classList.remove("active");
+      document.getElementById("all").classList.add("active");
+    });
 
     // local storage
     localStorage.setItem("todo-list", JSON.stringify(todos));

@@ -326,6 +326,11 @@ main {
   gap: 1rem;
 }
 
+.options:hover {
+  color: var(--clr-Light-Grayish-Blue);
+  transition: all 0.3s;
+}
+
 .options.active {
   transform: scale(1.1);
   color: var(--clr-Light-Grayish-Blue);
@@ -340,11 +345,6 @@ main {
   border-bottom: 3px solid transparent;
 }
 
-.options:hover {
-  color: var(--clr-Light-Grayish-Blue);
-  transition: all 0.3s;
-}
-
 .options::before {
   content: "";
   position: absolute;
@@ -352,7 +352,7 @@ main {
   bottom: 0;
   width: 100%;
   height: 2px;
-  background-color: white;
+  background-color: var(--clr-Very-Light-Grayish-Blue);
   border-radius: 4px;
   scale: 0 1;
   transform-origin: right;
