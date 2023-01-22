@@ -365,7 +365,8 @@ main {
 }
 
 .options-clr {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  color: #484b6a;
   cursor: pointer;
   transition: all 0.3s;
 }
