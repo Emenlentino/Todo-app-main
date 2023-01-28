@@ -107,15 +107,6 @@ function editTask(taskId, taskName) {
   isEditing = true;
 }
 
-// drag &
-function dragDrop(dragArea) {
-  new Sortable(dragArea, {
-    animation: 300,
-  });
-  localStorage.setItem("todo-list", JSON.stringify(todos));
-}
-dragDrop(taskOutputEl);
-
 // event listneres
 // adding tasks
 taskInputEl.addEventListener("keyup", (e) => {
